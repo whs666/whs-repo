@@ -20,10 +20,7 @@ public class WeChatNotificationService {
     @Value("${wxpusher.uid}")
     private String uid;
 
-    @Value("${app.timezone:UTC}")
-    private String appTimeZone;
-
-    @Scheduled(cron = "0 40-50 23 * * ?", zone = "#{@environment.getProperty('app.timezone', 'UTC')}")
+    @Scheduled(cron = "0 50-58 11 * * ?", zone = "Asia/Shanghai")
     public void sendWeChatNotification() {
         try {
             String url = "http://wxpusher.zjiecode.com/api/send/message";
