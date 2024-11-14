@@ -20,7 +20,7 @@ public class WeChatNotificationService {
     @Value("${wxpusher.uid}")
     private String uid;
 
-    @Scheduled(cron = "0 0/15 23-23,0-4 * * ?")
+    @Scheduled(cron = "0 * * * * ?")
     public void sendWeChatNotification() {
         try {
             String url = "http://wxpusher.zjiecode.com/api/send/message";
